@@ -49,7 +49,7 @@ const UpdateForm = props => {
 
   return (
     <div>
-      <TheH2>Update movie</TheH2>
+      <TheH2>Update Movie</TheH2>
       <form onSubmit={handleSubmit}>
         <TheInput
           type="text"
@@ -94,18 +94,28 @@ export default UpdateForm;
 const TheH2 = styled.h2`
   display: flex;
   justify-content: center;
+  color: white;
 `;
 
 const TheInput = styled.input`
   display: flex;
   justify-content: center;
   margin-top: 15px;
-  margin-left: 800px;
+  margin-left: 785px;
   border: 2px dashed red;
+  background-color: black;
+  color: white;
+  padding: 15px;
 `;
 const Btn = styled.button`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-left: 837px;
+  margin-left: 817px;
+  background-color: black;
+  border: 2px dashed red;
+  color: white;
+  border-radius: 8px;
+  width: 8%;
+  padding: 10px;
 `;
