@@ -74,18 +74,17 @@ export default class Movie extends React.Component {
 }
 
 const TheDiv = styled.div`
-  margin-top: 30px;
   margin-left: 375px;
+  margin-top: 30px;
 `;
 
 const TheBtn = styled.button`
-  font-size: 1rem;
-  border-radius: 8px;
-  width: 30%;
-  padding: 15px;
-  // height: 70%;
-  margin-right: 15px;
   background-color: black;
   border: 2px dashed red;
+  border-radius: 8px;
   color: white;
+  font-size: 1rem;
+  margin-right: 15px;
+  padding: 15px;
+  width: 30%;
 `;

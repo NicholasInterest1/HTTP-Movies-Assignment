@@ -23,7 +23,7 @@ const MovieCard = props => {
 export default MovieCard;
 
 const TheH2 = styled.h2`
-  text-decoration: none;
-  font-size: 2.5rem;
   align-items: center;
+  font-size: 2.5rem;
+  text-decoration: none;
 `;

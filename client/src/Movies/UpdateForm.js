@@ -27,11 +27,11 @@ const UpdateForm = props => {
         ...movie,
         [e.target.name]: e.target.value
       });
-    } else{
-        setmovie({
-            ...movie,
-            [e.target.name]: e.target.value.split(",")
-        })
+    } else {
+      setmovie({
+        ...movie,
+        [e.target.name]: e.target.value.split(",")
+      });
     }
   };
 
@@ -92,30 +92,30 @@ const UpdateForm = props => {
 export default UpdateForm;
 
 const TheH2 = styled.h2`
+  color: white;
   display: flex;
   justify-content: center;
-  color: white;
 `;
 
 const TheInput = styled.input`
+  background-color: black;
+  border: 2px dashed red;
+  color: white;
   display: flex;
   justify-content: center;
   margin-top: 15px;
   margin-left: 785px;
-  border: 2px dashed red;
-  background-color: black;
-  color: white;
   padding: 15px;
 `;
 const Btn = styled.button`
+  background-color: black;
+  border: 2px dashed red;
+  border-radius: 8px;
+  color: white;
   display: flex;
   justify-content: center;
   margin-top: 20px;
   margin-left: 817px;
-  background-color: black;
-  border: 2px dashed red;
-  color: white;
-  border-radius: 8px;
-  width: 8%;
   padding: 10px;
+  width: 8%;
 `;
