@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import styled from "styled-components";
 
 export default class Movie extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class Movie extends React.Component {
     axios
       .delete(`http://localhost:5000/api/movies/${id}`)
       .then(res => {
-        this.props.history.push('/');
+        this.props.history.push("/");
       })
       .then(res => {
         this.props.updateMovies(res.data);
@@ -55,12 +56,36 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <button
-          onClick={() => this.props.history.push(`/update-movie/${this.state.movie.id}`)}>
-          Update Movie
-        </button>
-        <button onClick={() => this.deleteMovie(this.state.movie.id)}>Delete Movie</button>
+        <TheDiv>
+          <TheBtn
+            onClick={() =>
+              this.props.history.push(`/update-movie/${this.state.movie.id}`)
+            }
+          >
+            Update Movie
+          </TheBtn>
+          <TheBtn onClick={() => this.deleteMovie(this.state.movie.id)}>
+            Delete Movie
+          </TheBtn>
+        </TheDiv>
       </div>
     );
   }
 }
+
+const TheDiv = styled.div`
+  margin-top: 30px;
+  margin-left: 375px;
+`;
+
+const TheBtn = styled.button`
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 30%;
+  padding: 15px;
+  // height: 70%;
+  margin-right: 15px;
+  background-color: black;
+  border: 2px dashed red;
+  color: white;
+`;

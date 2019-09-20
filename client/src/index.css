@@ -1,31 +1,48 @@
+* {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  background-color: black;
+  background-image: url("https://wallpapercave.com/w/wp2610513.jpg");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: initial;
+  background-size: cover;
 }
 
 .movie-card {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  border: 3px dashed red;
+  /* box-shadow: 0 -1px 0 whitesmoke, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24); */
+  padding-bottom: 1rem;
+  padding-left: 1rem;
   cursor: pointer;
+  width: 25%;
   position: relative;
   margin: 1rem auto;
+  color: red;
 }
 
 .movie-director {
   padding: 4px 0;
-  font-size: 0.8rem;
+  font-size: 1.25rem;
 }
 
 .saved-list {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
+  background-color: black;
+  color: white;
+  border: 4px dashed red;
+  /* box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24); */
   padding: 1rem;
   cursor: pointer;
   position: relative;
@@ -57,19 +74,31 @@ body {
   position: absolute;
   top: 25px;
   right: 25px;
-  border: 1px solid grey;
+  border: 3px dashed red;
   padding: 5px 10px;
-  background-color: lightseagreen;
-}
-.save-button:hover {
-  background-color: green;
+  background-color: black;
   color: white;
+  cursor: pointer;
 }
+/* .save-button:hover {
+  border: 3px dashed red;
+  background-color: black;
+  color: white;
+} */
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  background-color: black;
+  border: 3px dashed red;
+  color: white;
+  text-decoration: none;
 }
+
+/* .home-button:hover {
+  border: 3px dashed red;
+  background-color: black;
+  color: black;
+} */
 
 .movie-warning {
   color: red;

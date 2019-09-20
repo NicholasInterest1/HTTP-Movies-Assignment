@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 const initialInfo = {
   title: "",
   director: "",
   metascore: "",
+  stars: []
 };
 
 const UpdateForm = props => {
@@ -20,16 +22,17 @@ const UpdateForm = props => {
   }, [match, movies]);
 
   const changeHandler = e => {
-    e.persist();
-    let value = e.target.value;
-    if (e.target.name === "director") {
-      value = parseInt(value, 10);
+    if (e.target.name !== "stars") {
+      setmovie({
+        ...movie,
+        [e.target.name]: e.target.value
+      });
+    } else{
+        setmovie({
+            ...movie,
+            [e.target.name]: e.target.value.split(",")
+        })
     }
-
-    setmovie({
-      ...movie,
-      [e.target.name]: value
-    });
   };
 
   const handleSubmit = e => {
@@ -46,17 +49,17 @@ const UpdateForm = props => {
 
   return (
     <div>
-      <h2>Update movie</h2>
+      <TheH2>Update movie</TheH2>
       <form onSubmit={handleSubmit}>
-        <input
+        <TheInput
           type="text"
           name="title"
           onChange={changeHandler}
           placeholder=" Movie Title"
-          value={movie.name}
+          value={movie.title}
         />
 
-        <input
+        <TheInput
           type="text"
           name="director"
           onChange={changeHandler}
@@ -64,7 +67,7 @@ const UpdateForm = props => {
           value={movie.director}
         />
 
-        <input
+        <TheInput
           type="number"
           name="metascore"
           onChange={changeHandler}
@@ -72,10 +75,37 @@ const UpdateForm = props => {
           value={movie.metascore}
         />
 
-        <button>Update Movie</button>
+        <TheInput
+          type="text"
+          name="stars"
+          onChange={changeHandler}
+          placeholder="Movie Stars"
+          value={movie.stars}
+        />
+
+        <Btn>Update Movie</Btn>
       </form>
     </div>
   );
 };
 
 export default UpdateForm;
+
+const TheH2 = styled.h2`
+  display: flex;
+  justify-content: center;
+`;
+
+const TheInput = styled.input`
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 800px;
+  border: 2px dashed red;
+`;
+const Btn = styled.button`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 837px;
+`;

@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 export default class SavedList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+    render() {
     return (
       <div className="saved-list">
         <h3>Saved Movies:</h3>
