@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   return (
     <div className="movie-card">
-      <h2>{title}</h2>
+      <TheH2>{title}</TheH2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -12,14 +13,17 @@ const MovieCard = props => {
         Metascore: <strong>{metascore}</strong>
       </div>
       <h3>Actors</h3>
-
       {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
+        <div key={star}>{star}</div>
       ))}
     </div>
   );
 };
 
 export default MovieCard;
+
+const TheH2 = styled.h2`
+  align-items: center;
+  font-size: 2.5rem;
+  text-decoration: none;
+`;
